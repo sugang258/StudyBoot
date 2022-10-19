@@ -30,7 +30,7 @@
   <tbody>
     <tr>
       <th scope="row">${ar.num}</th>
-      <td>${ar.title}</td>
+      <td><a href="./detail?num=${ar.num}">${ar.title}</a></td>
       <td>${ar.writer}</td>
       <td>${ar.contents}</td>
       <td>${ar.hit}</td>

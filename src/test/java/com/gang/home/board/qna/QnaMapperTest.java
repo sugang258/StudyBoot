@@ -72,4 +72,24 @@ class QnaMapperTest {
 		}
 		assertNotEquals(0, result);
 	}
+	
+	//@Test
+	void setFileAdd() throws Exception{
+		QnaFileVO qnaFileVO = new QnaFileVO();
+		qnaFileVO.setNum(99L);
+		qnaFileVO.setFileName("sususu");
+		qnaFileVO.setOriName("ganggang");
+		int result = qnaMapper.setFileAdd(qnaFileVO);
+		
+		assertNotEquals(0, result);
+	}
+	
+	@Test
+	void getDetail() throws Exception{
+		QnaVO qnaVO = new QnaVO();
+		qnaVO.setNum(99L);
+		
+		qnaVO = qnaMapper.getDetail(qnaVO);
+		assertNotNull(qnaVO);
+	}
 }
