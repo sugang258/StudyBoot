@@ -17,8 +17,11 @@
 	</div>
 	<div>
 		<img alt="" src="/file/qna/8aaeaf5b-96fe-418b-abac-6df9d7db9c39_3b9e2db0-f503-4732-8704-f504319b780e_chunsik_춘식.png"/>
-		<a href="/file/qna/8aaeaf5b-96fe-418b-abac-6df9d7db9c39_3b9e2db0-f503-4732-8704-f504319b780e_chunsik_춘식.png">click</a>
+		<a href="/fileDown/qna?fileNum=2">click</a>
 		<a href="/file/qna/c320734f-191d-48e8-b395-3a55553c8ba8_error-404-concept-for-landing-page.zip">Click</a>
+		<img alt="" src="/file/notice/palace.jpg"/>
+		<a href="fileDown/notice?fileNum=2">NoticeDown</a>
+		
 	</div>
 
 </body>
