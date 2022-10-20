@@ -23,7 +23,15 @@ public class FileManager {
 		StringBuffer bf = new StringBuffer();
 		bf.append(fileName);
 		bf.append("_");
-		bf.append(multipartFile.getOriginalFilename());
+		
+		
+		//파일명과 확장자 분리
+		String ex = multipartFile.getOriginalFilename();
+		ex = ex.substring(ex.lastIndexOf("."));
+		
+		bf.append(ex);
+		
+		fileName = bf.toString();
 		
 		//3. File Save
 		File file = new File(path,bf.toString());
@@ -34,7 +42,7 @@ public class FileManager {
 		
 		log.info("fileName : {}",bf.toString());
 		
-		return bf.toString();
+		return fileName;
 		
 	}
 
