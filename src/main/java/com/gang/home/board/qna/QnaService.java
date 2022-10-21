@@ -56,12 +56,7 @@ public class QnaService {
 			boolean check = file.mkdirs();
 		}	
 		
-		for(MultipartFile f : qnaVO.getFiles()) {
-			if(f.isEmpty()) {
-				log.info("Exception 발생");
-				throw new Exception();
-			}
-		}
+	
 		
 		for(MultipartFile f : qnaVO.getFiles()) {
 			if(!f.isEmpty()) {
@@ -73,7 +68,7 @@ public class QnaService {
 				qnaMapper.setFileAdd(qnaFileVO);
 			}
 		}
-		return 1;
+		return result;
 	}
 	
 	public QnaVO getDetail(QnaVO qnaVO) throws Exception{
