@@ -84,7 +84,7 @@ public class FileManager extends AbstractView {
 		//3. File Save
 		File file = new File(path,bf.toString());
 		
-		FileCopyUtils.copy(multipartFile.getBytes(), file);
+		//FileCopyUtils.copy(multipartFile.getBytes(), file);
 	    multipartFile.transferTo(file);
 		
 		
