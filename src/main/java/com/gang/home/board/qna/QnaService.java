@@ -11,6 +11,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.gang.home.util.FileManager;
@@ -45,6 +46,7 @@ public class QnaService {
 		
 	}
 	
+	@Transactional(rollbackFor = Exception.class)
 	public int setAdd(QnaVO qnaVO) throws Exception{
 		int result = qnaMapper.setAdd(qnaVO);
 
@@ -52,7 +54,14 @@ public class QnaService {
 		
 		if(!file.exists()) {
 			boolean check = file.mkdirs();
-		}		
+		}	
+		
+		for(MultipartFile f : qnaVO.getFiles()) {
+			if(f.isEmpty()) {
+				log.info("Exception 발생");
+				throw new Exception();
+			}
+		}
 		
 		for(MultipartFile f : qnaVO.getFiles()) {
 			if(!f.isEmpty()) {
