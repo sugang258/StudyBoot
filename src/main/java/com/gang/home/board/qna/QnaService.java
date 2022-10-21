@@ -21,6 +21,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @Service
 @Slf4j
+@Transactional(rollbackFor = Exception.class)
 public class QnaService {
 	
 	@Autowired
@@ -46,7 +47,6 @@ public class QnaService {
 		
 	}
 	
-	@Transactional(rollbackFor = Exception.class)
 	public int setAdd(QnaVO qnaVO) throws Exception{
 		int result = qnaMapper.setAdd(qnaVO);
 
