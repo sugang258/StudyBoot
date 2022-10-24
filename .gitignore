@@ -35,6 +35,9 @@ build/
 # Created by https://www.toptal.com/developers/gitignore/api/windows,eclipse,java,web
 # Edit at https://www.toptal.com/developers/gitignore?templates=windows,eclipse,java,web
 
+###my file ###
+application-secret.properties
+
 ### Eclipse ###
 .metadata
 bin/
