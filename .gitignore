@@ -37,6 +37,7 @@ build/
 
 ###my file ###
 application-secret.properties
+application-prod.properties
 
 ### Eclipse ###
 .metadata
