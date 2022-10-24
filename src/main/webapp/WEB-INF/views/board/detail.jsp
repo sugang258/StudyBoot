@@ -37,7 +37,7 @@
     </tbody>
     </table>
     <c:forEach items="${qnaVO.qnaFilesVO}" var="qna">
-    <img src="/upload/${qna.fileName}">
+    <img src="/upload/qna/${qna.fileName}">
     </c:forEach>
 </body>
 </html>
