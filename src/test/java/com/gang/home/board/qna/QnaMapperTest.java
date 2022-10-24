@@ -67,18 +67,18 @@ class QnaMapperTest {
 //		assertNotEquals(0, ar.size());
 //	}
 	
-	@Test
-	void setAdd() throws Exception{
-		QnaVO qnaVO = new QnaVO();
-		int result = 0;
-		log.info("===================={}===============",app);
-			qnaVO.setTitle("배고파");
-			qnaVO.setWriter("수갱갱갱갱");
-			qnaVO.setContents("뭐먹지");
-			//result = qnaMapper.setAdd(qnaVO);
-		
-		assertNotEquals(0,1);
-	}
+//	@Test
+//	void setAdd() throws Exception{
+//		QnaVO qnaVO = new QnaVO();
+//		int result = 0;
+//		log.info("===================={}===============",app);
+//			qnaVO.setTitle("배고파");
+//			qnaVO.setWriter("수갱갱갱갱");
+//			qnaVO.setContents("뭐먹지");
+//			//result = qnaMapper.setAdd(qnaVO);
+//		
+//		assertNotEquals(0,1);
+//	}
 	
 	//@Test
 	void setFileAdd() throws Exception{
