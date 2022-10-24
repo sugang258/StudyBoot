@@ -18,8 +18,8 @@ public class HomeController {
 	
 //	@Value("${my.message.hi}")
 //	private String message;
-	@Value("${my.default}")
-	private String app;
+//	@Value("${my.default}")
+//	private String app;
 	
 	//private final Logger log = LoggerFactory.getLogger(HomeController.class);
 	private final Logger log = LoggerFactory.getLogger(this.getClass());
@@ -30,7 +30,7 @@ public class HomeController {
 	@GetMapping("/")
 	public String home() throws Exception{
 		//log.info("message : {}",message);
-		log.info("default : {}",app);
+	//	log.info("default : {}",app);
 
 		return "index";
 	}
