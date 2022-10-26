@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	<mapper namespace="com.gang.home.member.MemberMapper">
+		<insert id="setAdd" parameterType="MemberVO">
+			INSERT INTO MEMBER VALUES(#{id},#{pw},#{name},#{email},#{enabled})
+		</insert>
+		<insert id="setRole" parameterType="RoleVO">
+			INSERT INTO MEMBER_ROLE VALUES(#{id},#{num})
+		</insert>
+		<select id="getLogin" parameterType="MemberVO" resultType="MemberVO">
+			SELECT * FROM MEMBER WHERE ID=#{id} AND PW=#{pw}
+		</select>
+		
+	</mapper>

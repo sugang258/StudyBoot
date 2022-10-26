@@ -22,7 +22,6 @@
       <th scope="col">contents</th>
       <th scope="col">hit</th>
       <th scope="col">regDate</th>
-      
     </tr>
   </thead>
   <tbody>
@@ -38,6 +37,7 @@
     </table>
     <c:forEach items="${qnaVO.qnaFilesVO}" var="qna">
     <img src="/file/qna/${qna.fileName}">
+    <a href="/fileDown/qna?fileNum=${qna.fileNum}">${qna.oriName}</a>
     </c:forEach>
 </body>
 </html>

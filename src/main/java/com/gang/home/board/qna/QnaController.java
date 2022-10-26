@@ -58,6 +58,8 @@ public class QnaController {
 		qnaVO = qnaService.getDetail(qnaVO);
 		mv.addObject("qnaVO", qnaVO);
 		mv.setViewName("/board/detail");
+
 		return mv;
 	}
+	
 }

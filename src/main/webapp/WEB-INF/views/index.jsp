@@ -8,9 +8,11 @@
 <title>Insert title here</title>
 <c:import url="./temp/boot.jsp"></c:import>
 <link href="/css/test.css" rel="stylesheet">
+<script defer src="/js/test.js"></script>
 </head>
 <body>
 	<h1>Index page</h1>
+	<label>${member.name}</label>
 	<img src="/images/chunsik.png">
 	<div>
 	<a href="./qna/List">QNA</a>
@@ -21,6 +23,12 @@
 		<a href="/file/qna/c320734f-191d-48e8-b395-3a55553c8ba8_error-404-concept-for-landing-page.zip">Click</a>
 		<img alt="" src="/file/notice/palace.jpg"/>
 		<a href="fileDown/notice?fileNum=2">NoticeDown</a>
+		<input type="button" id="btn" value="클릭" />
+
+		<input type="button" class="buttons" value="클릭" />
+		<input type="button" class="buttons" value="클릭" />
+		<input type="button" class="buttons" value="클릭" />
+
 		
 	</div>
 

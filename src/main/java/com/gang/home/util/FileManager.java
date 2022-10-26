@@ -11,6 +11,7 @@ import java.util.UUID;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.util.FileCopyUtils;
 import org.springframework.web.multipart.MultipartFile;
@@ -24,17 +25,24 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class FileManager extends AbstractView {
 	
+	@Value("${app.download.base}")
+	private String base;
+	
 	//Down 걸어주는 Method
 	@Override
 	protected void renderMergedOutputModel(Map<String, Object> model, HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
 		
+		//FileManagerController에서 꺼내오기
 		QnaFileVO qnaFileVO =(QnaFileVO) model.get("fileVO");
 		String path =(String) model.get("path");
+		
 		log.info("=============================");
 		log.info("FileVO : {}",qnaFileVO);
 		
-		File file = new File("C:/result/upload/"+path, qnaFileVO.getFileName());
+		//배포하면 경로가 바뀌어야함 /app2/upload/  ==> application-prod.properties 파일에 해줌
+		//개발환경 => C:/result/upload/  ==> application.properties 파일에 해줌
+		File file = new File(base+path, qnaFileVO.getFileName());
 		
 		//한글 처리
 		response.setCharacterEncoding("UTF-8");

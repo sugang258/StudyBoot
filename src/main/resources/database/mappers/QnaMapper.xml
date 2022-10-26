@@ -29,6 +29,10 @@
 			WHERE QNA.NUM=#{num}
 	</select>
 	
+	<select id="getFileDetail" parameterType="QnaFileVO" resultType="QnaFileVO">
+		SELECT * FROM QNAFILES WHERE FILENUM=#{fileNum}
+	</select>
+	
 	<resultMap type="QnaVO" id="getDetailResult">
 		<id column="num" property="num"/>
 		<result column="title" property="title"/>
@@ -36,12 +40,14 @@
 		<result column="contents" property="contents"/>
 		<result column="hit" property="hit"/>
 		<result column="regDate" property="regDate"/>
+		<result column="ref" property="ref"/>
+		<result column="step" property="step"/>
+		<result column="depth" property="depth"/>
 			<collection property="qnaFilesVO" javaType="List" ofType="QnaFileVO">
 				<id column="fileNum" property="fileNum"/>
 				<result column="fileName" property="fileName"/>
 				<result column="oriName" property="oriName"/>
 			</collection>
-	
 	</resultMap>
 
 
