@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 <c:import url="../temp/boot.jsp"></c:import>
 <c:import url="../temp/summer.jsp"></c:import>
-<script defer scr="/js/write"></script>
+<script defer type="text/javascript" src="/js/write.js"></script>
 </head>
 <body>
 	<section class="container-fluid col-lg-8 mt-5">
@@ -25,7 +25,7 @@
 			  </div>
 
 			  <div>
-				<div class="mb-3">
+				<div class="mb-3" id="files">
 
 				</div>
 				<div class="mb-3">
@@ -35,11 +35,11 @@
 			  </div>
 			  <!-- <div class="mb-3">
 			    <label for="file" class="form-label">File</label>
-	            <input type="file"  class="form-control add_ele" id="file" name="files"></textarea>
+	            <input type="file"  class="form-control add_ele" id="file" name="files"/>
 			  </div>
 			  <div class="mb-3">
 			    <label for="file" class="form-label">File</label>
-	            <input type="file"  class="form-control add_ele" id="file" name="files"></textarea>
+	            <input type="file"  class="form-control add_ele" id="file" name="files"/>
 			  </div> -->
 			  <button type="submit" class="btn btn-primary">Submit</button>
 			</form>
