@@ -31,15 +31,15 @@ class MemberTest {
 	}
 	
 	//@Test
-	void setRole() throws Exception{
-		RoleVO roleVO = new RoleVO();
-		roleVO.setNum(1L);
-		roleVO.setId("susu");
-		
-		int result = memberMapper.setRole(roleVO);
-		assertNotEquals(0, result);
-
-	}
+//	void setRole() throws Exception{
+//		RoleVO roleVO = new RoleVO();
+//		roleVO.setNum(1L);
+//		roleVO.setId("susu");
+//		
+//		int result = memberMapper.setRole(roleVO);
+//		assertNotEquals(0, result);
+//
+//	}
 	
 	//@Test
 	void getLogin() throws Exception{

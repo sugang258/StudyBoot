@@ -15,14 +15,27 @@ public class MemberService {
 	private MemberMapper memberMapper;
 	 
 	public int setAdd(MemberVO memberVO) throws Exception{
-		return memberMapper.setAdd(memberVO);
+		int result = memberMapper.setAdd(memberVO);
+		
+		if(result < 1) {
+			throw new Exception();
+		}
+		result = memberMapper.setRole(memberVO);
+		
+		if(result <1) {
+			throw new Exception();
+		}
+		return result;
 	}
-	public int setRole(RoleVO roleVO) throws Exception{
-		return memberMapper.setRole(roleVO);
+	public int setRole(MemberVO memberVO) throws Exception{
+		return memberMapper.setRole(memberVO);
 	}
 	
 	public MemberVO getLogin(MemberVO memberVO) throws Exception{
 		return memberMapper.getLogin(memberVO);
 	}
-	
+
+	public Integer getIdCheck(MemberVO memberVO) throws Exception{
+		return memberMapper.getIdCheck(memberVO);
+	}
 }
