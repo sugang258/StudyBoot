@@ -18,7 +18,7 @@
 					<div class="row">
 						<div class="col-6">
 							<input type="text" name="id" class="form-control border-success border-opacity-25" id="ipId" placeholder="아이디를 입력해주세요">
-							<div id="inputInResult"></div>
+							<div id="inputIdResult"></div>
 						</div>
 					</div>
 					<div class="my-4">
@@ -29,7 +29,7 @@
 					<div class="my-4">
 						<label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
 						<div class="col-sm-10">
-						  <input type="password" name="pw" class="form-control" id="inputPwCheck" placeholder="Password 입력">
+						  <input type="password" name="pwCheck" class="form-control" id="inputPwCheck" placeholder="Password 입력">
 						  <div id="inputPwCheckResult"></div>
 						</div>
 					  </div>
@@ -74,8 +74,24 @@
 
 	</div>
 	<div>
-		<button id="test2">test2</button>
+        
+		<button type="button" id="test">post test</button>
+		<button type="button" id="test2">ajax get test</button>
+		<button type="button" id="test3">ajax post test</button>
 	</div>
+	<div>
+
+		<select id= "s1">
+			<option>1</option>
+			<option>2</option>
+
+		</select>
+		<button type="button" id="s1Add">Add</button>
+	</div>
+
+
+	<script type="text/javascript"></script>
+
 
 </body>
 </html>

@@ -30,11 +30,11 @@ $(".check").click(function(){
 let results = [false, false, false, false, false];
 
 //Id Check
-$("id").blur(function(){
+$("#ipId").blur(function(){
     console.log("start");
-    let id = $("#id").val();
-    let result = nullCheck(id,$("#id"),"ID");
-    result[0]=result;
+    let id = $("#ipId").val();
+    let result = nullCheck(id,$("#inputIdResult"),"ID");
+    results[0]=result;
     console.log(result);
 
     $.get("./idCheck?id="+id,function(data){
@@ -44,7 +44,7 @@ $("id").blur(function(){
             results[0]=true;
         }else{
             $("#inputIdResult").html("이미 사용중인 ID");
-            result[0]=false;
+            results[0]=false;
         }
     })
 });
@@ -61,14 +61,14 @@ $("id").blur(function(){
 //     $("#inputPwCheckResult").html("");
 // });
 
-$("#pw").on({
+$("#ipPw").on({
     blur:function(){
-        let result = nullCheck($("#pw").val(), $("#inputPwResult"),"PW");
+        let result = nullCheck($("#ipPw").val(), $("#inputPwResult"),"PW");
         results[1]=result;
 
     },
     change:function(){
-        $("inputPwCheck").val();
+        $("inputPwCheck").val("");
         results[2]=false;
         $("#inputPwCheckResult").html("");
     }
@@ -76,7 +76,7 @@ $("#pw").on({
 
 //// pw Equal Check
 $("#inputPwCheck").blur(function(){
-    let result = equals($("#pw").val(), $("#inputPwCheck").val());
+    let result = equals($("#ipPw").val(), $("#inputPwCheck").val());
     if(result){
         $("#inputPwCheckResult").html("정상");
     }else{
@@ -93,8 +93,8 @@ $("#name").blur(function(){
 
 //email check
 $("#email").blur(function(){
-    let result = nullCheck($("email").val(), $("inputEmailResult"), "Email");
-    result[4]=result;
+    let result = nullCheck($("#email").val(), $("#inputEmailResult"), "Email");
+    results[4]=result;
 })
 
 
@@ -107,12 +107,25 @@ $("#joinButton").click(function(){
         alert("필수 입력은 다 입력해");
     }else{
         alert("전송");
-        //$("#joinForm").submit();
+        $("#joinForm").submit();
     }
 
 })
 
+$("#test").click(function(){
+    let id=1234;
+    let name=it;
 
+    $.post("test",{
+        //파라미터이름:변수명
+        //{"키 : 벨류"}
+        id:id,
+        name:name
+    },function(result){
+        console.log("result : ",result);
+        console.log("name : ",result.name);
+    })
+})
 
 $("#test2").click(function(){
     let id = "abcd";
@@ -142,21 +155,27 @@ $("#test3").click(function(){
     $.ajax({
         type:"POST",
         url:"test",
+        traditional:true,
         data:{
             id:id,
             name:name,
             ar:ar
         },
-        traditaion:true,
-        success:function(data){
-            console.log("Data : ",data);
-        },
-        error:function(xhr,status,error){
-            console.log("Xhr : ",xhr);
-            console.log("Status : ",status);
-            console.log("Error : ",error);
-
-
+        success:function(result){
+            console.log("result : ",result);
         }
     })
 })
+
+let count = 3;
+$("#s1Add").click(function(){
+    let add = '<option class ="abc" id="adbc'+count+'">'+count+'</option>';
+    $("#s1").append(add);
+    count++;
+
+   // $("#slAdd").remove();
+})
+
+// $("#s1").click(function(){
+//     $("#s1").empty();
+// })
